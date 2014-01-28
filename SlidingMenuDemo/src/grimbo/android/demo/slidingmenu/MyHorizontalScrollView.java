@@ -21,17 +21,14 @@
  */
 package grimbo.android.demo.slidingmenu;
 
-import java.sql.Savepoint;
-
 import android.content.Context;
-import android.database.DataSetObservable;
 import android.os.Handler;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.view.GestureDetector.SimpleOnGestureListener;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.GestureDetector.SimpleOnGestureListener;
 import android.view.ViewTreeObserver.OnGlobalLayoutListener;
 import android.widget.HorizontalScrollView;
 import android.widget.ListView;

@@ -28,22 +28,18 @@ import java.util.Date;
 
 import android.app.Activity;
 import android.content.Context;
-import android.gesture.Gesture;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.GestureDetector;
-import android.view.GestureDetector.SimpleOnGestureListener;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
-import android.util.Log;
 /**
  * This demo uses a custom HorizontalScrollView that ignores touch events, and therefore does NOT allow manual scrolling.
  * 
@@ -60,41 +56,7 @@ public class HorzScrollWithListMenu extends Activity {
 	boolean menuOut = false;
 	Handler handler = new Handler();
 	int btnWidth;
-	// ///////////////////////mycode///////////////////////////////////////////
-	float xDown = 0.0f;
-	float xUp = 0.0f;
-
-	@Override
-	public boolean onTouchEvent(MotionEvent event) {
-		// TODO Auto-generated method stub
-		menu.invalidate();
-		app.invalidate();
-		scrollView.invalidate();
-		System.out.println("Hello!!");
-		if (event.getAction() == MotionEvent.ACTION_DOWN) {
-			xDown = event.getX(); // DownÀ¸·Î ÀÐÇûÀ»¶§ÀÇ xÁÂÇ¥
-		} else if (event.getAction() == MotionEvent.ACTION_UP) {
-			xUp = event.getY(); // UpÀ¸·Î ÀÐÇûÀ» ¶§ÀÇ YÁÂÇ¥
-		}
-
-		// move event motion event
-		// Ensure menu is visible
-		menu.setVisibility(View.VISIBLE);
-		int menuWidth = menu.getMeasuredWidth();
-		if (xUp < xDown) {
-			// Scroll to 0 to reveal menu
-			int left = 0;
-			scrollView.smoothScrollTo(left, 0);
-		} else {
-			// Scroll to menuWidth so menu isn't on screen.
-			int left = menuWidth;
-			scrollView.smoothScrollTo(left, 0);
-		}
-
-		return super.onTouchEvent(event);
-	}
-
-	///////////////////////mycode END/////////////////////////////////////////////
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

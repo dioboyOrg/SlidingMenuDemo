@@ -72,14 +72,6 @@ public class SlideAnimationThenCallLayout extends Activity implements AnimationL
             anim.setFillAfter(true);
 
 
-            // Only use fillEnabled and fillAfter if we don't call layout ourselves.
-            // We need to do the layout ourselves and not use fillEnabled and fillAfter because when the anim is finished
-            // although the View appears to have moved, it is actually just a drawing effect and the View hasn't moved.
-            // Therefore clicking on the screen where the button appears does not work, but clicking where the View *was* does
-            // work.
-            // anim.setFillEnabled(true);
-            // anim.setFillAfter(true);
-
             app.startAnimation(anim);
         }
     }
